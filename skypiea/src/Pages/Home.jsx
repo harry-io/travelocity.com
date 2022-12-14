@@ -5,6 +5,8 @@ import B from "../Components/B";
 import C from "../Components/C";
 import D from "../Components/D";
 import E from "../Components/E";
+import GetApp from "../Components/GetApp";
+import Footer from "../Components/Footer";
 
 export default function Home() {
   return (
@@ -17,6 +19,8 @@ export default function Home() {
       <C />
       <D />
       <E />
+      <GetApp />
+      <Footer />
       {/*  */}
     </>
   );
