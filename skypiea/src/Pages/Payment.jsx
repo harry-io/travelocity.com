@@ -1,6 +1,8 @@
 import NavbarB from "../Components/NavbarB";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faLock } from "@fortawesome/free-solid-svg-icons";
+import CountryCode from "../Components/CountryCode";
+import PaymentB from "../Components/PaymentB";
 
 export default function Payment() {
   return (
@@ -17,7 +19,7 @@ export default function Payment() {
           marginBottom: "20px",
         }}
       >
-        <h3>Secure booking — only takes 2 minutes!</h3>
+        <h2>Secure booking — only takes 2 minutes!</h2>
         <div
           style={{
             fontSize: "small",
@@ -39,47 +41,69 @@ export default function Payment() {
           margin: "auto",
           display: "flex",
           gap: "2%",
+          border: "1px solid red",
+          alignItems: "center",
+          justifyContent: "space-between",
         }}
       >
         <div
           style={{
-            width: "65%",
-            backgroundColor: "white",
-            padding: "0.7% 0",
+            width: "70%",
           }}
         >
           <div
             style={{
-              width: "95%",
+              width: "100%",
               margin: "auto",
 
               display: "flex",
               alignItems: "center",
               gap: "1rem",
+              backgroundColor: "white",
+              marginBottom: "10px",
+              borderBottomLeftRadius: "10px",
+              borderBottomRightRadius: "10px",
             }}
           >
-            <div>
-              <FontAwesomeIcon icon={faLock} />
-            </div>
             <div
               style={{
-                lineHeight: "0.1rem",
+                width: "95%",
+                margin: "auto",
+                display: "flex",
+                alignItems: "center",
+                gap: "1rem",
+                backgroundColor: "white",
+                padding: "0.7% 0",
               }}
             >
-              <p
+              <div>
+                <FontAwesomeIcon icon={faLock} />
+              </div>
+              <div
                 style={{
-                  fontSize: "small",
+                  lineHeight: "0.1rem",
                 }}
               >
-                Signed in as
-              </p>
-              <p>Email address</p>
+                <p
+                  style={{
+                    fontSize: "small",
+                  }}
+                >
+                  Signed in as
+                </p>
+                <p>Email address</p>
+              </div>
             </div>
           </div>
+          {/*  */}
+          <PaymentB />
+          {/*  */}
         </div>
+
+        {/* part 2 */}
         <div
           style={{
-            width: "25%",
+            width: "30%",
             border: "1px solid black",
           }}
         ></div>
