@@ -1,12 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faBagShopping,
-  faCalendar,
   faCalendarDay,
-  faLocation,
   faLocationDot,
-  faMagnifyingGlass,
-  faPerson,
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
 import { NavLink } from "react-router-dom";

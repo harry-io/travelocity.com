@@ -1,0 +1,41 @@
+.hotels_main_div {
+  width: 90%;
+  margin: auto;
+  max-width: 1247px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.hotels_subDiv_a {
+  border: 1px solid red;
+  width: 85%;
+}
+.hotels_subDiv_b {
+  width: 13%;
+}
+.subDivA_hotel_info {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.filters_map {
+  border: 2px solid black;
+  width: 20%;
+}
+.hotels_result {
+  width: 77%;
+  margin-bottom: 10px;
+}
+.sort_hotels_n_Properties {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sort_hotels_n_Properties > div:nth-child(2) > select {
+  width: 100%;
+  height: 50px;
+  border-radius: 10px;
+  font-size: medium;
+  padding-left: 2%;
+}
