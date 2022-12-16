@@ -12,7 +12,7 @@ export default function Hotels() {
   const [query, setQuery] = useState("Goa");
   useEffect(() => {
     axios
-      .get(`https://relieved-lion-attire.cyclic.app/${query}`)
+      .get(`https://rose-repulsive-adder.cyclic.app/${query}`)
       .then((res) => setData(res.data))
       .catch((err) => console.log(err));
   }, []);

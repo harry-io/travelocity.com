@@ -1,6 +1,9 @@
 import MoreTravel from "./MoreTravel";
+import UserPrompt from "./UserPrompt";
+import { useState } from "react";
 
 export default function NavA() {
+  const [showMoreTravel, setShowMoreTravel] = useState(false);
   return (
     <>
       <div className="nav_a" style={{ backgroundColor: "navy", width: "100%" }}>
@@ -35,37 +38,16 @@ export default function NavA() {
             </div>
             <div
               style={{
-                width: "45%",
+                width: "50%",
                 display: "flex",
                 alignItems: "center",
-
                 justifyContent: "space-around",
               }}
             >
-              <button
-                style={{
-                  background: "none",
-                  border: "none",
-                  cursor: "pointer",
-                  display: "flex",
-                  alignItems: "center",
-                }}
-              >
-                <div
-                  style={{
-                    fontSize: "0.775rem",
-                    color: "#fff",
-                    fontWeight: 500,
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "5px",
-                  }}
-                >
-                  {/*  */}
-                  <MoreTravel />
-                  {/*  */}
-                </div>
-              </button>
+              <MoreTravel
+                showMoreTravel={showMoreTravel}
+                setShowMoreTravel={setShowMoreTravel}
+              />
             </div>
           </div>
           {/*  */}
@@ -170,6 +152,7 @@ export default function NavA() {
                 >
                   Sign in
                 </div>
+                <UserPrompt />
               </button>
             </div>
           </div>
