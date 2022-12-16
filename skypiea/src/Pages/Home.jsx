@@ -7,6 +7,7 @@ import D from "../Components/D";
 import E from "../Components/E";
 import GetApp from "../Components/GetApp";
 import Footer from "../Components/Footer";
+import "../Styles/Home.css";
 
 export default function Home() {
   return (

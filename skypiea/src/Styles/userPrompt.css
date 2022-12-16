@@ -1,0 +1,61 @@
+.signin_pop {
+  position: absolute;
+  background-color: white;
+  z-index: 1;
+  right: 7%;
+  border-radius: 10px;
+  width: 300px;
+  box-shadow: 0px 2px 5px #ccc;
+  padding: 1% 0;
+  top: 60px;
+}
+.signin_div_a {
+  width: 90%;
+  margin: auto;
+}
+.signin_heading {
+  text-align: left;
+}
+.signin_buttons {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+.signin_buttons > button {
+  border: none;
+  width: 100%;
+  cursor: pointer;
+}
+.signin_buttons > button:nth-child(1) {
+  background-color: navy;
+  color: white;
+  padding: 3% 0;
+  border-radius: 5px;
+  font-size: 1.1vw;
+}
+.signin_buttons > button:nth-child(2) {
+  background-color: transparent;
+  color: navy;
+  font-size: 1.1vw;
+}
+.extras_signin {
+  width: 100%;
+  padding: 2% 0;
+  margin-top: 10px;
+}
+.extras_signin:hover {
+  background-color: rgba(0, 0, 128, 0.061);
+}
+.inner_signin {
+  width: 90%;
+  margin: auto;
+  text-align: left;
+}
+.inner_signin > a {
+  text-decoration: none;
+  color: grey;
+  font-size: small;
+}
+.inner_signin > a:hover {
+  color: navy;
+}

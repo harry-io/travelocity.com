@@ -1,0 +1,25 @@
+.moreTravel_items {
+  box-shadow: 0px 2px 5px #ccc;
+  padding: 1.5% 0;
+}
+.moreTravel_item {
+  padding: 1.5% 0;
+  cursor: pointer;
+}
+.moreTravel_item:hover {
+  background-color: rgba(0, 0, 128, 0.049);
+}
+.inner_item {
+  width: 90%;
+  margin: auto;
+  font-size: large;
+  display: flex;
+  align-items: center;
+  gap: 4%;
+  color: navy;
+  padding: 1% 0;
+}
+.inner_item a {
+  text-decoration: none;
+  font-size: small;
+}

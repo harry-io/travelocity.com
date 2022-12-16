@@ -5,7 +5,43 @@ import {
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
 import { NavLink } from "react-router-dom";
+import { DateRange } from "react-date-range";
+import { useState } from "react";
+import "react-date-range/dist/styles.css"; // main css file
+import "react-date-range/dist/theme/default.css"; // theme css file
+import "./styles/searchField.css";
+import { format } from "date-fns";
+
 export default function SearchField() {
+  const [location, setLocation] = useState("");
+  const [openDate, setOpenDate] = useState(false);
+  const [openOptions, setOpenOptions] = useState(false);
+  const [options, setOptions] = useState({
+    adult: 1,
+    children: 0,
+    room: 1,
+  });
+  const [date, setDate] = useState([
+    {
+      startDate: new Date(),
+      endDate: new Date(),
+      key: "selection",
+    },
+  ]);
+  //
+  const handleStaysInput = () => {
+    alert("destination locked and loading");
+  };
+  //
+  const handleCounter = (name, operation) => {
+    setOptions((prev) => {
+      return {
+        ...prev,
+        [name]: operation === "i" ? options[name] + 1 : options[name] - 1,
+      };
+    });
+  };
+  //
   return (
     <div
       style={{
@@ -17,28 +53,32 @@ export default function SearchField() {
         margin: "auto",
       }}
     >
-      <div
-        style={{
-          display: "flex",
-          width: "40%",
-          margin: "auto",
-          textAlign: "center",
-          justifyContent: "space-between",
-          border: "1px solid black",
-        }}
-      >
-        <NavLink>Stays</NavLink>
-        <NavLink>Flights</NavLink>
-        <NavLink>Cars</NavLink>
-        <NavLink>Packages</NavLink>
-        <NavLink>Things to do</NavLink>
-        <NavLink>Cruises</NavLink>
+      <div id="anon_navbar_two">
+        <div>
+          <NavLink>Stays</NavLink>
+        </div>
+        <div>
+          <NavLink>Flights</NavLink>
+        </div>
+        <div>
+          <NavLink>Cars</NavLink>
+        </div>
+        <div>
+          <NavLink>Packages</NavLink>
+        </div>
+        <div>
+          <NavLink>Things to do</NavLink>
+        </div>
+        <div>
+          <NavLink>Cruises</NavLink>
+        </div>
       </div>
-      <hr style={{ width: "95%" }} />
+      <hr style={{ width: "95%", marginBottom: "20px" }} />
       <div
         style={{
           width: "90%",
-          display: "flex",
+          display: "grid",
+          gridTemplateColumns: "3fr 1fr 1fr 2fr",
           margin: "auto",
           gap: "2%",
         }}
@@ -48,7 +88,6 @@ export default function SearchField() {
             display: "flex",
             alignItems: "center",
             border: "1px solid gray",
-            flex: 3,
             cursor: "pointer",
             borderRadius: "10px",
           }}
@@ -61,6 +100,7 @@ export default function SearchField() {
               margin: "auto",
               gap: "3%",
               color: "gray",
+              height: "55px",
             }}
           >
             <FontAwesomeIcon style={{ color: "navy" }} icon={faLocationDot} />
@@ -68,6 +108,8 @@ export default function SearchField() {
             <input
               type="text"
               placeholder={`Going to`}
+              value={location}
+              onChange={(e) => setLocation(e.target.value)}
               style={{
                 width: "100%",
                 margin: "auto",
@@ -80,6 +122,7 @@ export default function SearchField() {
           </div>
         </div>
         <div
+          onClick={() => setOpenDate(!openDate)}
           style={{
             display: "flex",
             alignItems: "center",
@@ -89,17 +132,28 @@ export default function SearchField() {
             lineHeight: "0.3rem",
             cursor: "pointer",
             borderRadius: "10px",
+            height: "55px",
           }}
         >
           <div style={{ fontSize: "large" }}>
             <FontAwesomeIcon icon={faCalendarDay} />
           </div>
-          <div>
+          <div style={{ height: "100%" }}>
             <p style={{ fontSize: "small" }}>Check-in</p>
-            <p>Dec 24</p>
+            <span>{`${format(date[0].startDate, "dd/MM/yyy")}`}</span>
           </div>
+          {openDate && (
+            <DateRange
+              editableDateInputs={true}
+              onChange={(item) => setDate([item.selection])}
+              moveRangeOnFirstSelection={false}
+              ranges={date}
+              className="date_pick"
+            />
+          )}
         </div>
         <div
+          onClick={() => setOpenDate(!openDate)}
           style={{
             display: "flex",
             alignItems: "center",
@@ -109,14 +163,15 @@ export default function SearchField() {
             lineHeight: "0.3rem",
             cursor: "pointer",
             borderRadius: "10px",
+            height: "55px",
           }}
         >
           <div>
             <FontAwesomeIcon icon={faCalendarDay} />
           </div>
-          <div>
+          <div style={{ height: "100%" }}>
             <p style={{ fontSize: "small" }}>Check-out</p>
-            <p>Jan 22</p>
+            <span>{`${format(date[0].endDate, "dd/MM/yyy")}`}</span>
           </div>
         </div>
         <div
@@ -130,14 +185,86 @@ export default function SearchField() {
             lineHeight: "0.3rem",
             cursor: "pointer",
             borderRadius: "10px",
+            height: "55px",
           }}
         >
           <div>
             <FontAwesomeIcon icon={faUser} />
           </div>
-          <div>
+          <div style={{ height: "100%" }}>
             <p style={{ fontSize: "small" }}>Travelers</p>
-            <p>1 room, 2 travelers</p>
+            <span
+              onClick={() => setOpenOptions(!openOptions)}
+            >{`${options.adult} Adult, ${options.children} Children, ${options.room} Room`}</span>
+            {openOptions && (
+              <div className="options_menu">
+                <div>
+                  <h3>Travelers</h3>
+                </div>
+                <div className="optionItem_list">
+                  <div className="optionItem">
+                    <span className="option_text">Adult</span>
+                    <div className="counter_div">
+                      <button
+                        className="optionButton"
+                        onClick={() => handleCounter("adult", "d")}
+                      >
+                        -
+                      </button>
+                      <span className="optionCounter">{options.adult}</span>
+                      <button
+                        className="optionButton"
+                        onClick={() => handleCounter("adult", "i")}
+                      >
+                        +
+                      </button>
+                    </div>
+                  </div>
+                  <div className="optionItem">
+                    <span className="option_text">Children</span>
+                    <div className="counter_div">
+                      <button
+                        className="optionButton"
+                        onClick={() => handleCounter("children", "d")}
+                      >
+                        -
+                      </button>
+                      <span className="optionCounter">{options.children}</span>
+                      <button
+                        className="optionButton"
+                        onClick={() => handleCounter("children", "i")}
+                      >
+                        +
+                      </button>
+                    </div>
+                  </div>
+                  <div className="optionItem">
+                    <span className="option_text">Room</span>
+                    <div className="counter_div">
+                      <button
+                        className="optionButton"
+                        onClick={() => handleCounter("room", "d")}
+                      >
+                        -
+                      </button>
+                      <span className="optionCounter">{options.room}</span>
+                      <button
+                        className="optionButton"
+                        onClick={() => handleCounter("room", "i")}
+                      >
+                        +
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <button
+                  onClick={() => setOpenOptions(false)}
+                  className="options_done_btn"
+                >
+                  Done
+                </button>
+              </div>
+            )}
           </div>
         </div>
       </div>
@@ -153,6 +280,7 @@ export default function SearchField() {
         }}
       >
         <button
+          onClick={handleStaysInput}
           style={{
             border: "none",
             backgroundColor: "navy",
@@ -160,6 +288,7 @@ export default function SearchField() {
             padding: "1.4% 6%",
             borderRadius: "10px",
             fontSize: "medium",
+            cursor: "pointer",
           }}
         >
           Search
