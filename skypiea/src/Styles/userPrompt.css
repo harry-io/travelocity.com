@@ -33,6 +33,9 @@
   border-radius: 5px;
   font-size: 1.1vw;
 }
+.signin_buttons > button:nth-child(1):hover {
+  background-color: rgba(0, 0, 128, 0.646);
+}
 .signin_buttons > button:nth-child(2) {
   background-color: transparent;
   color: navy;
@@ -42,6 +45,7 @@
   width: 100%;
   padding: 2% 0;
   margin-top: 10px;
+  margin-bottom: 10px;
 }
 .extras_signin:hover {
   background-color: rgba(0, 0, 128, 0.061);
@@ -57,5 +61,6 @@
   font-size: small;
 }
 .inner_signin > a:hover {
-  color: navy;
+  color: rgb(0, 0, 128);
 }
+/*  */

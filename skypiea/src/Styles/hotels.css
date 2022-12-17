@@ -17,6 +17,9 @@
 }
 .hotels_subDiv_b {
   width: 13%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
 }
 .subDivA_hotel_info {
   width: 100%;
