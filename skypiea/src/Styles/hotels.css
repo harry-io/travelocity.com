@@ -1,3 +1,9 @@
+.hotel_lists {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  margin-top: 20px;
+}
 .hotels_main_div {
   width: 90%;
   margin: auto;
@@ -7,7 +13,6 @@
   margin-top: 20px;
 }
 .hotels_subDiv_a {
-  border: 1px solid red;
   width: 85%;
 }
 .hotels_subDiv_b {
@@ -38,4 +43,59 @@
   border-radius: 10px;
   font-size: medium;
   padding-left: 2%;
+}
+/*  */
+
+.all_info {
+  /* border: 1px solid red; */
+  width: 70%;
+  height: min-content;
+}
+.carousel_lil {
+  width: 28%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hotelCard_main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  line-height: 0%;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  padding-right: 1%;
+}
+.heading_hotel {
+  font-size: small;
+  display: flex;
+  flex-direction: column;
+}
+.details_hotel {
+  font-size: x-small;
+  border: 1px solid rgba(0, 0, 0, 0);
+
+  color: grey;
+}
+.hotel_price {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  font-size: small;
+}
+.rating_and_taxes {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.ratings_hotel {
+  font-size: x-small;
+  display: flex;
+  align-items: center;
+}
+.hotel_taxes {
+  font-size: x-small;
+  display: flex;
+  align-items: center;
 }

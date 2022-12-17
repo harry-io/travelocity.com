@@ -2,66 +2,35 @@ import CarouselA from "./Carousel";
 
 export default function HotelCard({ details }) {
   return (
-    <div
-      style={{
-        width: "100%",
-        border: "1px solid red",
-        display: "flex",
-        justifyContent: "space-between",
-      }}
-    >
-      <div
-        className="carousel_lil"
-        style={{ width: "28%", border: "1px solid black" }}
-      >
-        <CarouselA />
+    <div className="hotelCard_main">
+      <div className="carousel_lil">
+        <CarouselA
+          img1={details.img1}
+          img2={details.img2}
+          img3={details.img3}
+          img4={details.img4}
+        />
       </div>
-      <div
-        className="all_info"
-        style={{ width: "70%", border: "1px solid black" }}
-      >
-        <div>
+      <div className="all_info">
+        <div className="heading_hotel">
           <h2>{details.heading1}</h2>
           <p>{details.city}</p>
         </div>
-        <div>
+        <div className="details_hotel">
           <h4>{details.text1}</h4>
           <p>{details.text2}</p>
         </div>
-        <div
-          style={{
-            width: "100%",
-            border: "1px solid red",
-            display: "flex",
-            alignItems: "center",
-            gap: "10px",
-            justifyContent: "flex-end",
-            height: "6%",
-          }}
-        >
+        <div className="hotel_price">
           <p style={{ textDecoration: "line-through" }}>₹{details.price2}</p>
           <h3>{details.price1}</h3>
         </div>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            width: "100%",
-            border: "1px solid red",
-          }}
-        >
-          <div style={{ display: "flex", width: "50%" }}>
+        <div className="rating_and_taxes">
+          <div className="ratings_hotel">
             <p style={{ marginRight: "5px" }}>{details.rating} </p>
             <p style={{ marginRight: "5px" }}>{details.review} </p>
             <p>{details.no_of_reviews}</p>
           </div>
-          <div
-            style={{
-              display: "flex",
-              width: "50%",
-              justifyContent: "flex-end",
-            }}
-          >
+          <div className="hotel_taxes">
             <p>Includs taxes and fees</p>
           </div>
         </div>

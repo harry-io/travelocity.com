@@ -2,7 +2,11 @@ import Navbar from "../Components/Navbar";
 import InputField from "../Components/InputField";
 import "../Styles/hotels.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faInfo } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCircleInfo,
+  faInfo,
+  faInfoCircle,
+} from "@fortawesome/free-solid-svg-icons";
 import { useState, useEffect } from "react";
 import HotelList from "../Components/HotelList";
 import axios from "axios";
@@ -29,8 +33,18 @@ export default function Hotels() {
             <div className="filters_map">FILTERS AND MAP</div>
             <div className="hotels_result">
               <div className="sort_hotels_n_Properties">
-                <div style={{ lineHeight: "0rem", width: "60%" }}>
-                  <p style={{ fontSize: "small" }}>211 properties</p>
+                <div
+                  style={{
+                    lineHeight: "0rem",
+                    width: "60%",
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "10px",
+                  }}
+                >
+                  <p
+                    style={{ fontSize: "small" }}
+                  >{`${data.length} properties`}</p>
                   <div
                     style={{
                       display: "flex",
@@ -39,10 +53,16 @@ export default function Hotels() {
                       marginTop: "-10px",
                     }}
                   >
-                    <p>See how we pick our recommended properties</p>
+                    <p style={{ color: "#000" }}>
+                      See how we pick our recommended properties
+                    </p>
                     <FontAwesomeIcon
-                      icon={faInfo}
-                      style={{ cursor: "pointer" }}
+                      icon={faCircleInfo}
+                      style={{
+                        cursor: "pointer",
+                        fontSize: "small",
+                        color: "#000",
+                      }}
                     />
                   </div>
                 </div>
