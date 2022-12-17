@@ -135,7 +135,7 @@ export default function NavA() {
                 </div>
               </button>
             </div>
-            <div>
+            <div style={{ position: "relative" }}>
               <button
                 style={{
                   background: "none",
