@@ -1,6 +1,8 @@
+import { useNavigate } from "react-router-dom";
 import CarouselA from "./Carousel";
 
-export default function HotelCard({ details }) {
+export default function HotelCard({ details, id, query }) {
+  let navigate = useNavigate();
   return (
     <div className="hotelCard_main">
       <div className="carousel_lil">
@@ -11,7 +13,10 @@ export default function HotelCard({ details }) {
           img4={details.img4}
         />
       </div>
-      <div className="all_info">
+      <div
+        onClick={() => navigate("/HotelDetails", { state: { id, query } })}
+        className="all_info"
+      >
         <div className="heading_hotel">
           <h2>{details.heading1}</h2>
           <p>{details.city}</p>

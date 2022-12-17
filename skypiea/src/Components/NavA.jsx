@@ -1,9 +1,11 @@
 import MoreTravel from "./MoreTravel";
 import UserPrompt from "./UserPrompt";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function NavA() {
   const [showMoreTravel, setShowMoreTravel] = useState(false);
+  const navigate = useNavigate();
   return (
     <>
       <div className="nav_a" style={{ backgroundColor: "navy", width: "100%" }}>
@@ -33,7 +35,7 @@ export default function NavA() {
                 style={{ width: "100%", cursor: "pointer" }}
                 src="https://i.ibb.co/7XX7GPJ/skypiea-logo.png"
                 alt="skypiea_logo"
-                onClick={() => alert("home")}
+                onClick={() => navigate("/")}
               />
             </div>
             <div

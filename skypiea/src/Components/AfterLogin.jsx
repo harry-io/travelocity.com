@@ -7,11 +7,11 @@ export default function AfterLogin() {
       {/*  */}
       <div className="signin_div_a">
         <div className="signin_heading">
-          <h3>Members can access discounts and special features</h3>
+          <h3>{`User`}</h3>
         </div>
         <div className="signin_buttons">
-          <button>Sign in</button>
-          <button>Create a free account</button>
+          <button>Sign out</button>
+          <button>Account</button>
         </div>
       </div>
       {/*  */}

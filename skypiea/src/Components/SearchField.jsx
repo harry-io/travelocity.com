@@ -4,7 +4,7 @@ import {
   faLocationDot,
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { DateRange } from "react-date-range";
 import { useState } from "react";
 import "react-date-range/dist/styles.css"; // main css file
@@ -29,8 +29,10 @@ export default function SearchField() {
     },
   ]);
   //
+  const navigate = useNavigate();
+  //
   const handleStaysInput = () => {
-    alert("destination locked and loading");
+    navigate("/hotels", { state: { location, date, options } });
   };
   //
   const handleCounter = (name, operation) => {
@@ -206,6 +208,7 @@ export default function SearchField() {
                     <span className="option_text">Adult</span>
                     <div className="counter_div">
                       <button
+                        disabled={options.adult <= 1}
                         className="optionButton"
                         onClick={() => handleCounter("adult", "d")}
                       >
@@ -213,6 +216,7 @@ export default function SearchField() {
                       </button>
                       <span className="optionCounter">{options.adult}</span>
                       <button
+                        disabled={options.adult >= 14}
                         className="optionButton"
                         onClick={() => handleCounter("adult", "i")}
                       >
@@ -224,6 +228,7 @@ export default function SearchField() {
                     <span className="option_text">Children</span>
                     <div className="counter_div">
                       <button
+                        disabled={options.children <= 0}
                         className="optionButton"
                         onClick={() => handleCounter("children", "d")}
                       >
@@ -231,6 +236,7 @@ export default function SearchField() {
                       </button>
                       <span className="optionCounter">{options.children}</span>
                       <button
+                        disabled={options.children == 14}
                         className="optionButton"
                         onClick={() => handleCounter("children", "i")}
                       >
@@ -242,6 +248,7 @@ export default function SearchField() {
                     <span className="option_text">Room</span>
                     <div className="counter_div">
                       <button
+                        disabled={options.room == 1}
                         className="optionButton"
                         onClick={() => handleCounter("room", "d")}
                       >
@@ -249,6 +256,7 @@ export default function SearchField() {
                       </button>
                       <span className="optionCounter">{options.room}</span>
                       <button
+                        disabled={options.room >= 6}
                         className="optionButton"
                         onClick={() => handleCounter("room", "i")}
                       >

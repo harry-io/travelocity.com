@@ -38,10 +38,11 @@
 .options_menu {
   position: absolute;
   background-color: white;
-  top: 85px;
+  top: 130px;
   right: 60px;
   border-radius: 10px;
-  box-shadow: 0px 2px 5px #ccc;
+  box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px,
+    rgba(212, 210, 210, 0.8) -6px -2px 16px 0px;
   padding: 2%;
   /* animation */
 }
@@ -70,14 +71,18 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 1px solid gray;
+  border: 1px solid rgba(128, 128, 128, 0.137);
   cursor: pointer;
   background-color: transparent;
   color: grey;
   font-size: large;
 }
+.optionButton:disabled {
+  cursor: not-allowed;
+}
 .optionButton:hover {
-  border: 1px solid navy;
+  background-color: rgba(0, 0, 128, 0.049);
+  color: rgb(34, 0, 102);
 }
 .options_done_btn {
   width: 100%;
