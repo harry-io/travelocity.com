@@ -32,6 +32,14 @@ export default function SearchField() {
   const navigate = useNavigate();
   //
   const handleStaysInput = () => {
+    localStorage.setItem(
+      "startDate",
+      JSON.stringify(format(date[0].startDate, "dd/MM/yyy"))
+    );
+    localStorage.setItem(
+      "endtDate",
+      JSON.stringify(format(date[0].endDate, "dd/MM/yyy"))
+    );
     navigate("/hotels", { state: { location, date, options } });
   };
   //
@@ -77,10 +85,10 @@ export default function SearchField() {
       </div>
       <hr style={{ width: "95%", marginBottom: "20px" }} />
       <div
+        className="main_input_field"
         style={{
           width: "90%",
           display: "grid",
-          gridTemplateColumns: "3fr 1fr 1fr 2fr",
           margin: "auto",
           gap: "2%",
         }}
@@ -291,7 +299,7 @@ export default function SearchField() {
           onClick={handleStaysInput}
           style={{
             border: "none",
-            backgroundColor: "navy",
+            backgroundColor: "#3498db",
             color: "white",
             padding: "1.4% 6%",
             borderRadius: "10px",

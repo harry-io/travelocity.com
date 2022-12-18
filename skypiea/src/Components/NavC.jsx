@@ -8,7 +8,10 @@ import {
 export default function NavB() {
   return (
     <>
-      <div className="nav_c" style={{ backgroundColor: "navy", width: "100%" }}>
+      <div
+        className="nav_c"
+        style={{ backgroundColor: "#3498db", width: "100%" }}
+      >
         {/*  */}
         <div
           style={{

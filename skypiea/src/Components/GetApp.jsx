@@ -94,7 +94,7 @@ export default function GetApp() {
               width: "30%",
               borderRadius: "10px",
               border: "none",
-              backgroundColor: "navy",
+              backgroundColor: "#3498db",
               color: "white",
               fontSize: "1.1vw",
               cursor: "pointer",

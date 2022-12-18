@@ -8,11 +8,9 @@
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
-  border: 1px solid black;
 }
 .info_section {
   width: 85%;
-  border: 1px solid red;
 }
 .ad_section {
   width: 13%;

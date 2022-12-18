@@ -1,30 +1,43 @@
-import { NavLink } from "react-router-dom";
-export default function C() {
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import "react-tabs/style/react-tabs.css";
+import Overview from "./Overview";
+import Rooms from "./Rooms";
+export default function C({ data }) {
+  const { city } = data;
   return (
-    <div className="hoteldata_c">
-      <div className="hoteldata_c_anon">
-        <div>
-          <NavLink>Stays</NavLink>
-        </div>
-        <div>
-          <NavLink>Flights</NavLink>
-        </div>
-        <div>
-          <NavLink>Cars</NavLink>
-        </div>
-        <div>
-          <NavLink>Packages</NavLink>
-        </div>
-        <div>
-          <NavLink>Things to do</NavLink>
-        </div>
-        <div>
-          <NavLink>Cruises</NavLink>
-        </div>
-      </div>
-      <div className="hoteldata_c_btn">
-        <button>Reserve a room</button>
-      </div>
+    <div style={{ width: "100%", background: "white", paddingBottom: "3%" }}>
+      <Tabs
+        style={{
+          width: "97.5%",
+          margin: "auto",
+          padding: "1% 0",
+          background: "white",
+        }}
+      >
+        <TabList>
+          <Tab>Overview</Tab>
+          <Tab>Rooms</Tab>
+          <Tab>Location</Tab>
+          <Tab>Amenities</Tab>
+          <Tab>Policies</Tab>
+        </TabList>
+
+        <TabPanel>
+          <Overview data={data} />
+        </TabPanel>
+        <TabPanel>
+          <Rooms city={city} />
+        </TabPanel>
+        <TabPanel>
+          <h2>Any content 2</h2>
+        </TabPanel>
+        <TabPanel>
+          <h2>Any content 2</h2>
+        </TabPanel>
+        <TabPanel>
+          <h2>Any content 2</h2>
+        </TabPanel>
+      </Tabs>
     </div>
   );
 }

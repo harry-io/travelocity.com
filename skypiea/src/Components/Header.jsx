@@ -5,14 +5,14 @@ export default function Header() {
     <div
       style={{
         width: "100%",
-        position: "relative",
+
         alignItems: "center",
         display: "flex",
         justifyContent: "center",
       }}
     >
       <img
-        style={{ width: "100%" }}
+        style={{ width: "100%", position: "relative" }}
         src="https://forever.travel-assets.com/flex/flexmanager/images/2021/06/25/TVLY_SeizeYourSomeday_lpheroB_1680x945_20210623.jpg?impolicy=fcrop&w=900&h=225&q=mediumHigh"
         alt="header_img"
       />

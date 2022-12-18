@@ -1,8 +1,11 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import CountryCode from "../Components/CountryCode";
+import { useState } from "react";
 
 export default function PaymentB() {
+  const [firstName, setFirstname] = useState("");
+  const [lastName, setLastname] = useState("");
   return (
     <>
       <div style={{ width: "100%", backgroundColor: "white", padding: "1% 0" }}>
@@ -19,7 +22,7 @@ export default function PaymentB() {
             <div style={{ display: "flex", alignItems: "center", gap: "2%" }}>
               <h4>Room 1: </h4>
               <span>
-                <p>Room details</p>
+                <p>1 Room: Standard Room, 1 King Bed, Non Smoking</p>
               </span>
             </div>
             <div
@@ -38,7 +41,7 @@ export default function PaymentB() {
                   alignItems: "center",
                   gap: "2%",
                   height: "20px",
-                  fontSize: "1vw",
+                  fontSize: "small",
                   width: "15%",
                   color: "green",
                   fontWeight: "600",
@@ -54,7 +57,7 @@ export default function PaymentB() {
                   gap: "2%",
                   fontSize: "1vw",
                   width: "15%",
-                  fontSize: "1vw",
+                  fontSize: "small",
                   color: "green",
                   fontWeight: "600",
                   height: "20px",
@@ -90,6 +93,9 @@ export default function PaymentB() {
                   flex: 1,
                   padding: "1% 1%",
                   borderRadius: "5px",
+                  height: "30px",
+                  outline: "1px solid #3498db",
+                  border: "none",
                 }}
                 type="text"
                 placeholder="First Name"
@@ -99,6 +105,9 @@ export default function PaymentB() {
                   flex: 1,
                   padding: "1% 1%",
                   borderRadius: "5px",
+                  height: "30px",
+                  outline: "1px solid #3498db",
+                  border: "none",
                 }}
                 type="text"
                 placeholder="Last name"
@@ -124,6 +133,9 @@ export default function PaymentB() {
                   flex: 2,
                   padding: "1% 1%",
                   borderRadius: "5px",
+                  height: "30px",
+                  outline: "1px solid #3498db",
+                  border: "none",
                 }}
                 type="number"
                 name=""

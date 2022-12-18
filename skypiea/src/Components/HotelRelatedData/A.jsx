@@ -1,12 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faArrowLeft,
-  faChevronLeft,
-  faChevronRight,
-  faHeart,
-  faHeartCircleBolt,
-  faHeartCircleCheck,
-} from "@fortawesome/free-solid-svg-icons";
+import { faArrowLeft, faHeart } from "@fortawesome/free-solid-svg-icons";
 import "pure-react-carousel/dist/react-carousel.es.css";
 import { useNavigate } from "react-router-dom";
 export default function A() {

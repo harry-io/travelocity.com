@@ -1,9 +1,28 @@
-import { Link } from "react-router-dom";
+import { json, Link } from "react-router-dom";
+import NavbarB from "../Components/NavbarB";
 import "../Styles/inputField.css";
+import { useNavigate } from "react-router-dom";
+import { useContext, useState } from "react";
+import { AuthContext } from "../Contexts/AuthContext";
 
 export default function Login() {
-  const handleLoginSubmit = () => {
-    console.log("asjcvv");
+  const navigate = useNavigate();
+  const { login } = useContext(AuthContext);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const handleLogin = () => {
+    let lsUserData = JSON.parse(localStorage.getItem("user_data"));
+    if (lsUserData.email != email) {
+      alert("No users found using the provided Email address !");
+    } else if (lsUserData.password != password) {
+      alert("Wrong or invalid password !");
+    } else {
+      setPassword("");
+      setEmail("");
+      login();
+      alert("Logged in successfully !");
+      navigate("/");
+    }
   };
   const navigateToApple = () => {};
   const navigateToFb = () => {};
@@ -11,16 +30,7 @@ export default function Login() {
   return (
     <div style={{ width: "100%", margin: "auto" }}>
       {/* TOP */}
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-        }}
-      >
-        <button>BACK</button>
-        <h2>LOGO</h2>
-      </div>
+      <NavbarB />
       {/* TOP */}
       <div className="mid" style={{ width: "28%", margin: "auto" }}>
         {/* MID */}
@@ -31,7 +41,7 @@ export default function Login() {
         </div>
         {/* title */}
         <form
-          onSubmit={handleLoginSubmit}
+          onSubmit={handleLogin}
           style={{ width: "100%", textAlign: "left" }}
         >
           {/* inp_1*/}
@@ -42,11 +52,13 @@ export default function Login() {
               name="email"
               type="text"
               placeholder="Username"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
             <label
               htmlFor="input__username"
               className="floating__label"
-              data-content="Username"
+              data-content="Email"
             ></label>
           </div>
           {/*inp_2  */}
@@ -57,6 +69,8 @@ export default function Login() {
               name="email"
               type="password"
               placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
             <label
               htmlFor="input__password"
@@ -126,7 +140,7 @@ export default function Login() {
         </form>
         <button
           style={{
-            background: "#0d5ab9",
+            background: "#3498db",
             color: "white",
             width: "100%",
             border: "none",
@@ -135,15 +149,16 @@ export default function Login() {
             fontSize: "20px",
             marginBottom: "25px",
             marginTop: "10px",
+            cursor: "pointer",
           }}
-          onClick={handleLoginSubmit}
+          onClick={handleLogin}
         >
           Sign In
         </button>
         {/* MID */}
       </div>
       {/* BOTTOM */}
-      <div style={{ width: "20%", margin: "auto" }}>
+      <div style={{ width: "20%", margin: "auto", textAlign: "center" }}>
         <Link to="/">Forgot Password ?</Link>
         <p
           style={{
@@ -155,7 +170,7 @@ export default function Login() {
           }}
         >
           Don't have an account?{" "}
-          <Link style={{ textDecoration: "none" }} to="/">
+          <Link style={{ textDecoration: "none" }} to="/signup">
             Create One
           </Link>
         </p>

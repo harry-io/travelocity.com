@@ -16,12 +16,13 @@ export default function E() {
         <h1>Here to help keep you on the move</h1>
       </div>
       <div
+        className="home_e"
         style={{
           width: "90%",
           maxWidth: "1247px",
           margin: "auto",
           display: "grid",
-          gridTemplateColumns: "repeat(3, 1fr)",
+
           gap: "2%",
           marginBottom: "50px",
         }}
