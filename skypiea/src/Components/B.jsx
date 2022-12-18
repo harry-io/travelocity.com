@@ -1,12 +1,13 @@
 export default function B() {
   return (
     <div
+      className="home_b_main"
       style={{
         width: "90%",
         maxWidth: "1247px",
         margin: "auto",
         display: "grid",
-        gridTemplateColumns: "repeat(2, 1fr)",
+
         gap: "2%",
         marginTop: "50px",
       }}

@@ -14,6 +14,7 @@ export default function MoreTravel({ showMoreTravel, setShowMoreTravel }) {
         justifyContent: "center",
         color: "white",
         fontSize: "small",
+        cursor: "pointer",
       }}
     >
       <div

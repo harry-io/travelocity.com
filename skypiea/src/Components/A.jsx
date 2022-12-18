@@ -1,6 +1,7 @@
 export default function A() {
   return (
     <div
+      className="home_a_main"
       style={{
         width: "90%",
         maxWidth: "1247px",
@@ -61,7 +62,7 @@ export default function A() {
             borderTopLeftRadius: "10px",
             filter: "brightness(80%)",
           }}
-          src="https://forever.travel-assets.com/flex/flexmanager/images/2020/11/12/TVLY_StoreFrontRefresh_BrandPromise_FitForYou_sfimg_562x240_20201111.jpg?impolicy=fcrop&w=900&h=386&q=mediumHigh"
+          src="https://forever.travel-assets.com/flex/flexmanager/images/2020/11/12/TVLY_StoreFrontRefresh_BrandPromise_Transparency_sfimg_562x240_20201111.jpg?impolicy=fcrop&w=900&h=386&q=mediumHigh"
           alt="img"
         />
         <div
@@ -97,7 +98,7 @@ export default function A() {
             borderTopLeftRadius: "10px",
             filter: "brightness(80%)",
           }}
-          src="https://forever.travel-assets.com/flex/flexmanager/images/2020/11/12/TVLY_StoreFrontRefresh_BrandPromise_FitForYou_sfimg_562x240_20201111.jpg?impolicy=fcrop&w=900&h=386&q=mediumHigh"
+          src="https://forever.travel-assets.com/flex/flexmanager/images/2020/11/12/TVLY_StoreFrontRefresh_BrandPromise_GotYourBack_sfimg_562x240_20201111.jpg?impolicy=fcrop&w=900&h=386&q=mediumHigh"
           alt="img"
         />
         <div
@@ -114,8 +115,8 @@ export default function A() {
         </div>
         <div style={{ width: "95%", margin: "auto", fontSize: "small" }}>
           <p>
-            Plan a trip for the whole family—from family travel tips to
-            family-friendly filters, our tools make it easy.
+            Need more help along your journey? We offer 24/7 support on social
+            and through virtual agents onsite.
           </p>
         </div>
       </div>

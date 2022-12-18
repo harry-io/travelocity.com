@@ -1,27 +1,48 @@
 import "../Styles/inputField.css";
-
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import NavbarB from "../Components/NavbarB";
+import { useNavigate } from "react-router-dom";
 const navigateToApple = () => {};
 const navigateToFb = () => {};
 
 export default function Signup() {
-  const handleLoginSubmit = () => {
-    console.log("asjcvv");
+  const navigate = useNavigate();
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSignup = (event) => {
+    event.preventDefault();
+    //
+    if (firstName === "") {
+      alert("Invalid first name !");
+    } else if (lastName === "") {
+      alert("Invalid last name !");
+    } else if (password === "" || password.length <= 0) {
+      alert("Enter valid password !");
+    } else if (email === "") {
+      alert("Enter email address !");
+    } else {
+      let profileData = { firstName, lastName, email, password };
+
+      localStorage.setItem("user_data", JSON.stringify(profileData));
+
+      alert("Account created successfully !");
+      setFirstName("");
+      setLastName("");
+      setPassword("");
+      setEmail("");
+      navigate("/login");
+    }
+    //
   };
 
   return (
     <div style={{ width: "100%", margin: "auto" }}>
       {/* TOP */}
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-        }}
-      >
-        <button>BACK</button>
-        <h2>LOGO</h2>
-      </div>
+      <NavbarB />
       {/* TOP */}
       <div className="mid" style={{ width: "28%", margin: "auto" }}>
         {/* MID */}
@@ -32,7 +53,7 @@ export default function Signup() {
         </div>
         {/* title */}
         <form
-          onSubmit={handleLoginSubmit}
+          onSubmit={handleSignup}
           style={{ width: "100%", textAlign: "left" }}
         >
           {/* inp_1*/}
@@ -43,6 +64,8 @@ export default function Signup() {
               name="email"
               type="email"
               placeholder="Email address"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
             <label
               htmlFor="input__email"
@@ -58,6 +81,8 @@ export default function Signup() {
               name="firstName"
               type="text"
               placeholder="FirstName"
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
             />
             <label
               htmlFor="input__first_name"
@@ -73,6 +98,8 @@ export default function Signup() {
               name="lastname"
               type="text"
               placeholder="Last name"
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
             />
             <label
               htmlFor="input__last_name"
@@ -88,6 +115,8 @@ export default function Signup() {
               name="email"
               type="password"
               placeholder="Email"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
             <label
               htmlFor="input__username"
@@ -138,14 +167,14 @@ export default function Signup() {
             >
               By signing in, I agree to the Travelocity{" "}
               <Link
-                style={{ textDecoration: "none" }}
+                style={{ textDecoration: "none", color: "#3498db" }}
                 to="https://www.travelocity.com/lp/lg-terms"
               >
                 Terms and Conditions
               </Link>{" "}
               and{" "}
               <Link
-                style={{ textDecoration: "none" }}
+                style={{ textDecoration: "none", color: "#3498db" }}
                 to="https://www.travelocity.com/lp/lg-privacy"
               >
                 Privacy Statement
@@ -157,7 +186,7 @@ export default function Signup() {
         </form>
         <button
           style={{
-            background: "#0d5ab9",
+            background: "#3498db",
             color: "white",
             width: "100%",
             border: "none",
@@ -166,27 +195,31 @@ export default function Signup() {
             fontSize: "20px",
             marginBottom: "25px",
             marginTop: "10px",
+            cursor: "pointer",
           }}
-          onClick={handleLoginSubmit}
+          onClick={handleSignup}
         >
           Continue
         </button>
         {/* MID */}
       </div>
       {/* BOTTOM */}
-      <div style={{ width: "20%", margin: "auto" }}>
+      <div style={{ width: "20%", margin: "auto", textAlign: "center" }}>
         <Link to="/">Forgot Password ?</Link>
         <p
           style={{
             fontSize: "0.85rem",
             lineHeight: "calc(16/12)",
-            color: "#505C66",
+            color: "#000",
             marginTop: "15px",
             marginBottom: "45px",
           }}
         >
           Already have an account?{" "}
-          <Link style={{ textDecoration: "none" }} to="/">
+          <Link
+            style={{ textDecoration: "none", color: "#3498db" }}
+            to="/login"
+          >
             Sign in
           </Link>
         </p>

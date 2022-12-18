@@ -1,15 +1,25 @@
+import { useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../Contexts/AuthContext";
 export default function NavbarB() {
+  const navigate = useNavigate();
+  const [user, setUser] = useState("User");
+  const { isAuth } = useContext(AuthContext);
+  useEffect(() => {
+    let userName = JSON.parse(localStorage.getItem("user_data"));
+    isAuth ? setUser(userName.firstName) : setUser("User");
+  });
   return (
     <>
       <div
         className="navbarB"
-        style={{ backgroundColor: "navy", width: "100%" }}
+        style={{ backgroundColor: "#3498db", width: "100%" }}
       >
         {/*  */}
         <div
           style={{
             width: "100%",
-            height: "48px",
+            height: "40px",
             maxWidth: "1247px",
             margin: "auto",
             display: "flex",
@@ -33,7 +43,7 @@ export default function NavbarB() {
                 style={{ width: "100%", cursor: "pointer" }}
                 src="https://i.ibb.co/7XX7GPJ/skypiea-logo.png"
                 alt="skypiea_logo"
-                onClick={() => alert("home")}
+                onClick={() => navigate("/")}
               />
             </div>
           </div>
@@ -48,7 +58,7 @@ export default function NavbarB() {
             }}
           >
             {/*  */}
-            <p style={{ fontSize: "1vw" }}>Hello, name</p>
+            <p style={{ fontSize: "1vw" }}>Hello, {user}</p>
           </div>
           {/*  */}
         </div>

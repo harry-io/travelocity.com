@@ -8,6 +8,8 @@ import HotelList from "../Components/HotelList";
 import axios from "axios";
 import Loading from "../Components/Loading";
 import { useLocation } from "react-router-dom";
+import Filters from "../Components/Filters";
+import Footer from "../Components/Footer";
 
 export default function Hotels() {
   const location = useLocation();
@@ -37,7 +39,9 @@ export default function Hotels() {
                 <InputField />
               </div>
               <div className="subDivA_hotel_info">
-                <div className="filters_map">FILTERS AND MAP</div>
+                <div className="filters_map">
+                  <Filters />
+                </div>
                 <div className="hotels_result">
                   <div className="sort_hotels_n_Properties">
                     <div
@@ -112,6 +116,7 @@ export default function Hotels() {
             </div>
             {/*  */}
           </div>
+          <Footer />
         </>
       )}
     </>

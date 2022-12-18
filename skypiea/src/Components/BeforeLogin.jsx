@@ -1,7 +1,8 @@
 import "../Styles/userPrompt.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function BeforeLogin() {
+  const navigate = useNavigate();
   return (
     <div className="signin_pop">
       {/*  */}
@@ -10,8 +11,10 @@ export default function BeforeLogin() {
           <h3>Members can access discounts and special features</h3>
         </div>
         <div className="signin_buttons">
-          <button>Sign in</button>
-          <button>Create a free account</button>
+          <button onClick={() => navigate("/login")}>Sign in</button>
+          <button onClick={() => navigate("/signup")}>
+            Create a free account
+          </button>
         </div>
       </div>
       {/*  */}

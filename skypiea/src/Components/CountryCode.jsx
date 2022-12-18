@@ -2,7 +2,15 @@ export default function CountryCode() {
   return (
     <>
       <select
-        style={{ width: "35%", padding: "1% 1%", borderRadius: "5px" }}
+        style={{
+          width: "35%",
+          padding: "1% 1%",
+          borderRadius: "5px",
+          height: "30px",
+          outline: "1px solid #3498db",
+          border: "none",
+          color: "#3498db",
+        }}
         id="oneLinePhoneNumberCountryCodeHiddenSelect"
         class="cko-field country-code gb-whitelist"
         data-normalize="false"

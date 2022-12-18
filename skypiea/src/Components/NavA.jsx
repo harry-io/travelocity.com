@@ -1,14 +1,26 @@
 import MoreTravel from "./MoreTravel";
 import UserPrompt from "./UserPrompt";
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../Contexts/AuthContext";
 
 export default function NavA() {
   const [showMoreTravel, setShowMoreTravel] = useState(false);
+  const [showUserPrompt, setShowUserPrompt] = useState(true);
+  const { isAuth, prompt, setPrompt } = useContext(AuthContext);
   const navigate = useNavigate();
+  const [name, setName] = useState("Sign in");
+
+  useEffect(() => {
+    let lsdata_user = JSON.parse(localStorage.getItem("user_data"));
+    isAuth ? setName(lsdata_user.firstName) : setName("Sign in");
+  }, []);
   return (
     <>
-      <div className="nav_a" style={{ backgroundColor: "navy", width: "100%" }}>
+      <div
+        className="nav_a"
+        style={{ backgroundColor: "#3498db", width: "100%" }}
+      >
         {/*  */}
         <div
           style={{
@@ -146,15 +158,16 @@ export default function NavA() {
                 }}
               >
                 <div
+                  onClick={() => setPrompt(!prompt)}
                   style={{
                     fontSize: "0.875rem",
                     color: "#fff",
                     fontWeight: 500,
                   }}
                 >
-                  Sign in
+                  {name}
                 </div>
-                <UserPrompt />
+                {prompt && <UserPrompt />}
               </button>
             </div>
           </div>

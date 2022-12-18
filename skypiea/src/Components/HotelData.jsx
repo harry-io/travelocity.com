@@ -14,16 +14,12 @@ export default function HotelData({ data }) {
           <div className="info_section">
             <A />
             <B img1={img1} img2={img2} img3={img3} img4={img4} />
-            <C />
+            <C data={data} />
           </div>
           {/* b */}
           <div className="ad_section">
             <img
               src="https://tpc.googlesyndication.com/simgad/18356432804528933170"
-              alt="img"
-            />
-            <img
-              src="https://tpc.googlesyndication.com/simgad/1479921553193853953?"
               alt="img"
             />
           </div>

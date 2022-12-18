@@ -3,6 +3,10 @@ import CarouselA from "./Carousel";
 
 export default function HotelCard({ details, id, query }) {
   let navigate = useNavigate();
+  const handleClick = () => {
+    localStorage.setItem("hotelDetails", JSON.stringify(details));
+    navigate("/HotelDetails", { state: { id, query } });
+  };
   return (
     <div className="hotelCard_main">
       <div className="carousel_lil">
@@ -13,10 +17,7 @@ export default function HotelCard({ details, id, query }) {
           img4={details.img4}
         />
       </div>
-      <div
-        onClick={() => navigate("/HotelDetails", { state: { id, query } })}
-        className="all_info"
-      >
+      <div onClick={handleClick} className="all_info">
         <div className="heading_hotel">
           <h2>{details.heading1}</h2>
           <p>{details.city}</p>

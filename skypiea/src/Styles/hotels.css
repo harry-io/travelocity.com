@@ -28,7 +28,6 @@
   margin-top: 20px;
 }
 .filters_map {
-  border: 2px solid black;
   width: 20%;
 }
 .hotels_result {
@@ -101,4 +100,52 @@
   font-size: x-small;
   display: flex;
   align-items: center;
+}
+/* overview */
+.c_details_right {
+  display: flex;
+  justify-content: space-between;
+  line-height: 0%;
+  font-size: small;
+}
+.c_details_right_sym {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: small;
+  color: grey;
+}
+/* Rooms */
+.room_cards {
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
+    rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+  padding: 4%;
+  border-radius: 10px;
+}
+.other_room_info {
+  line-height: 55%;
+  font-size: small;
+  padding: 3%;
+}
+.reserve_btn {
+  border: none;
+  background-color: #3498db;
+  width: 100px;
+  height: 40px;
+  border-radius: 10px;
+  color: white;
+  font-size: large;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+}
+.reserve_btn > a {
+  text-decoration: none;
+  color: white;
+}
+.reserve_btn:hover {
+  background-color: #5ca6d7;
+  cursor: pointer;
 }

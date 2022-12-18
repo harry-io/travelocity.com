@@ -4,6 +4,7 @@ import axios from "axios";
 import Navbar from "../Components/Navbar";
 import Loading from "../Components/Loading";
 import HotelData from "../Components/HotelData";
+import Footer from "../Components/Footer";
 export default function HotelDetails() {
   const location = useLocation();
 
@@ -31,6 +32,7 @@ export default function HotelDetails() {
         <div>
           <Navbar />
           <HotelData data={data} />
+          <Footer />
         </div>
       )}
     </>

@@ -14,7 +14,7 @@ export default function Footer() {
           style={{
             width: "10%",
             height: "40px",
-            backgroundColor: "navy",
+            backgroundColor: "#3498db",
             borderRadius: "10px",
             display: "flex",
             alignItems: "center",
@@ -36,6 +36,7 @@ export default function Footer() {
           margin: "auto",
           display: "grid",
           gridTemplateColumns: "repeat(4,1fr)",
+          color: "#3498db",
         }}
       >
         <div

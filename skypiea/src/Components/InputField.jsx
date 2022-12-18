@@ -7,6 +7,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 export default function InputField() {
+  let startDate = JSON.parse(localStorage.getItem("startDate"));
   return (
     <div
       style={{
@@ -106,9 +107,9 @@ export default function InputField() {
         style={{
           display: "flex",
           alignItems: "center",
-          backgroundColor: "navy",
-          width: "50px",
-          height: "50px",
+          backgroundColor: "#3498db",
+          width: "40px",
+          height: "40px",
           justifyContent: "center",
           borderRadius: "50%",
         }}
