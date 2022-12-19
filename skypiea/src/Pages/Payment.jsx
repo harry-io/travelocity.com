@@ -3,9 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faLock } from "@fortawesome/free-solid-svg-icons";
 import PaymentB from "../Components/PaymentB";
 import PaymentC from "../Components/PaymentC";
-import Alert from "@mui/material/Alert";
-import AlertTitle from "@mui/material/AlertTitle";
-import Stack from "@mui/material/Stack";
+
 import { useState } from "react";
 import Pimportant from "../Components/Pimportant";
 import Payemntmethod from "../Components/Payemntmethod";
@@ -15,7 +13,9 @@ export default function Payment() {
   const lsData2 = JSON.parse(localStorage.getItem("hotelReserved")) || [];
   const checkIn = JSON.parse(localStorage.getItem("startDate")) || [];
   const checkOut = JSON.parse(localStorage.getItem("endtDate")) || [];
-
+  //
+  const userData = JSON.parse(localStorage.getItem("user_data"));
+  const userEmail = userData.email;
   function convert(price) {
     let str = "";
     price = price.split("");
@@ -136,7 +136,7 @@ export default function Payment() {
                 >
                   Signed in as
                 </p>
-                <p>Email address</p>
+                <p>{userEmail}</p>
               </div>
             </div>
           </div>
