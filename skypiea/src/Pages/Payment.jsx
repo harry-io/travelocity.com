@@ -7,6 +7,8 @@ import Alert from "@mui/material/Alert";
 import AlertTitle from "@mui/material/AlertTitle";
 import Stack from "@mui/material/Stack";
 import { useState } from "react";
+import Pimportant from "../Components/Pimportant";
+import Payemntmethod from "../Components/Payemntmethod";
 
 export default function Payment() {
   const lsData1 = JSON.parse(localStorage.getItem("hotelDetails")) || [];
@@ -141,6 +143,9 @@ export default function Payment() {
           {/*  */}
           <PaymentB />
           <PaymentC />
+          <Payemntmethod />
+          <Pimportant />
+
           {/*  */}
         </div>
 
@@ -403,6 +408,25 @@ export default function Payment() {
         {/*  */}
 
         {/*  */}
+      </div>
+      <div
+        style={{
+          width: "90%",
+          maxWidth: "1247px",
+          margin: "auto",
+          fontSize: "small",
+          color: "gray",
+          marginBottom: "60px",
+        }}
+      >
+        <p>
+          © 2022 Travelscape LLC, an Expedia Group Company. All rights reserved.
+        </p>
+        <p>
+          Travelocity, the Stars Design, and The Roaming Gnome Design are
+          trademarks or registered trademarks of Travelscape LLC. CST#
+          2056372-50.
+        </p>
       </div>
     </>
   );
