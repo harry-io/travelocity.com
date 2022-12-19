@@ -9,21 +9,21 @@
   position: absolute;
   right: 2%;
   top: 45%;
-  background-color: rgba(0, 0, 0, 0.336);
+  background-color: rgb(255, 255, 255);
   height: 30px;
   width: 30px;
   border-radius: 50%;
   border: none;
-  color: rgb(255, 255, 255);
+  color: #000;
 }
 .carousel_prev_btn {
   position: absolute;
   left: 2%;
   top: 45%;
-  background-color: rgba(0, 0, 0, 0.336);
+  background-color: rgb(255, 255, 255);
   height: 30px;
   width: 30px;
   border-radius: 50%;
   border: none;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
 }

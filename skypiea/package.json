@@ -25,6 +25,7 @@
     "react-custom-alert": "^1.0.4",
     "react-date-range": "^1.4.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.7.1",
     "react-router-dom": "^6.4.5",
     "react-scripts": "5.0.1",
     "react-simply-carousel": "^8.4.1",
